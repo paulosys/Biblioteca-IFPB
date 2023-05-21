@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
 #cadastrar-component {
     height: 100%;
     width: 100%;
@@ -38,7 +40,7 @@
 }
 
 #title-form {
-    font-family: 'Roboto Flex';
+    font-family: 'Nunito', sans-serif;
     font-weight: bold;
     font-size: 2.7rem;
     color: #ECACAE;
