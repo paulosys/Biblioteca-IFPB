@@ -1,1 +1,12 @@
-<h1>Gerenciar livros</h1>
+<div class="body">
+    <h1>Gerenciar livros</h1>
+
+    <mat-form-field class="input-pesquisar" appearance="outline">
+        <mat-icon matIconPrefix>search</mat-icon>
+        <mat-label>Pesquisar livro</mat-label>
+        <input matInput type="text" [(ngModel)]="pesquisa">
+        <button *ngIf="pesquisa" matSuffix mat-icon-button aria-label="Clear" (click)="pesquisa=''">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
