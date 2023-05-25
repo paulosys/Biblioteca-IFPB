@@ -5,12 +5,12 @@ export const navbarData = [
         label: 'Início'
     },
     {
-        routeLink: 'gerenciar-livro',
+        routeLink: 'livros',
         icon: 'menu_book',
         label: 'Livros'
     },
     {
-        routeLink: 'gerenciar-sala',
+        routeLink: 'salas',
         icon: 'room_preferences',
         label: 'Salas'
     },

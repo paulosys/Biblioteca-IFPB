@@ -29,6 +29,10 @@ export class LivroService {
   }
 
   atualizar(livro: Livro): Observable<Livro> {
-    return this.httpClient.get<Livro>(`${this.URL_LIVROS}/${livro.id}`);
+    return this.httpClient.put<Livro>(`${this.URL_LIVROS}/${livro.id}`, livro);
+  }
+
+  apagar(id: number): Observable<Livro> {
+    return this.httpClient.delete<Livro>(`${this.URL_LIVROS}/${id}`);
   }
 }
