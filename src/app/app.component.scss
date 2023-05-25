@@ -53,6 +53,10 @@
   }
 }
 
+li:hover{
+  cursor: pointer;
+}
+
 .active {
   background-color: #fff;
   .sidenav-link-icon,

@@ -8,7 +8,7 @@ import { Livro } from '../models/livro';
 })
 
 export class LivroService {
-  URL_LIVROS = 'http://localhost:3000/livros';
+  URL_LIVROS = 'https://json-server-pweb.paulosilva3.repl.co/livros';
 
   constructor(private httpClient: HttpClient) { }
 
