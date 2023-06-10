@@ -10,6 +10,8 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatListModule } from "@angular/material/list";
 import { MatIconModule } from "@angular/material/icon";
 import { GestorModule } from './modules/gestor/gestor.module';
+import { MensagemAbstract } from './shared/models/mensagem.abstract';
+import { MensagemSweetService } from './shared/services/mensagem-sweet.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,12 @@ import { GestorModule } from './modules/gestor/gestor.module';
     MatIconModule,
     GestorModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MensagemAbstract,
+      useClass: MensagemSweetService,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

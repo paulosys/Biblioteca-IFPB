@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Livro } from 'src/app/shared/models/livro';
-import { LivroService } from 'src/app/shared/services/livro-service.service';
+import { LivroService } from 'src/app/shared/services/livro.service';
 
 @Component({
   selector: 'app-livros',
