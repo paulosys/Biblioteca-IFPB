@@ -1,0 +1,126 @@
+<section class="body">
+    <header class="header">
+      <h1 class="title">{{ tituloPagina }}</h1>
+    </header>
+  
+    <main>
+      <form [formGroup]="livroForm" (ngSubmit)="submit()">
+        <div class="form-content">
+          <div class="left-content">
+            <mat-form-field appearance="outline">
+              <mat-label>URL</mat-label>
+              <input formControlName="url_img" type="text" matInput />
+            </mat-form-field>
+  
+            <img
+              *ngIf="livroForm.value.url_img"
+              [src]="livroForm.value.url_img"
+              alt=""
+            />
+  
+            <mat-form-field appearance="outline">
+              <mat-label>Sinopse</mat-label>
+              <textarea
+                formControlName="sinopse"
+                matInput
+                placeholder="Sinopse"
+              ></textarea>
+            </mat-form-field>
+          </div>
+  
+          <div class="right-content">
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>Título</mat-label>
+                <input formControlName="titulo" type="text" matInput />
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Autor</mat-label>
+                <input formControlName="autor" type="text" matInput />
+              </mat-form-field>
+            </div>
+  
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>ISBN</mat-label>
+                <input formControlName="isbn" matInput />
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Editora</mat-label>
+                <input formControlName="editora" type="text" matInput />
+              </mat-form-field>
+            </div>
+  
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>Gênero</mat-label>
+                <input formControlName="genero" type="text" matInput />
+              </mat-form-field>
+  
+              <mat-form-field appearance="outline">
+                <mat-label>Ano de publicação</mat-label>
+                <input
+                  formControlName="data_publicacao"
+                  matInput
+                  [matDatepicker]="picker"
+                />
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="picker"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+  
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>Número de páginas</mat-label>
+                <input formControlName="numero_paginas" type="text" matInput />
+              </mat-form-field>
+  
+              <mat-form-field appearance="outline">
+                <mat-label>Idioma</mat-label>
+                <input formControlName="idioma" type="text" matInput />
+              </mat-form-field>
+            </div>
+  
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label>Quantidade de exemplares</mat-label>
+                <input
+                  formControlName="quantidade_exemplares"
+                  type="text"
+                  matInput
+                />
+              </mat-form-field>
+  
+              <mat-form-field appearance="outline">
+                <mat-label>Disponibilidade</mat-label>
+                <mat-select formControlName="disponibilidade">
+                  <mat-option value="Disponivel">Disponivel</mat-option>
+                  <mat-option value="Indisponivel">Indisponivel</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+  
+            <div class="buttons-form">
+              <button
+                mat-raised-button
+                (click)="apagar()"
+                type="button"
+                class="button-apagar"
+                *ngIf="modoEdicao"
+              >
+                Apagar
+              </button>
+  
+              <button mat-raised-button class="button-adicionar" type="submit">
+                {{ mensagemBotaoConfirmar }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+  </section>
+  

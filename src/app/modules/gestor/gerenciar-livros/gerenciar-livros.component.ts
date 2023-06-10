@@ -1,15 +1,15 @@
-import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { ActivatedRoute, Router } from "@angular/router";
-import { Livro } from "src/app/shared/models/livro";
-import { LivroService } from "src/app/shared/services/livro-service.service";
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Livro } from 'src/app/shared/models/livro';
+import { LivroService } from 'src/app/shared/services/livro-service.service';
 
 @Component({
-  selector: "app-gerenciar-livro",
-  templateUrl: "./gerenciar-livro.component.html",
-  styleUrls: ["./gerenciar-livro.component.scss"],
+  selector: 'app-gerenciar-livros',
+  templateUrl: './gerenciar-livros.component.html',
+  styleUrls: ['./gerenciar-livros.component.scss']
 })
-export class GerenciarLivroComponent implements OnInit {
+export class GerenciarLivrosComponent {
   livroForm: FormGroup;
   livro?: Livro;
   modoEdicao: boolean = false;
