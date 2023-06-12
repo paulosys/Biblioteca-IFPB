@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { LivrosComponent } from './livros/livros.component';
 import { GerenciarLivrosComponent } from './gerenciar-livros/gerenciar-livros.component';
+import { SalasComponent } from './salas/salas.component';
+import { GerenciarSalasComponent } from './gerenciar-salas/gerenciar-salas.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -18,8 +20,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 
+
 @NgModule({
-  declarations: [HomeAdminComponent, LivrosComponent, GerenciarLivrosComponent],
+  declarations: [HomeAdminComponent, LivrosComponent, GerenciarLivrosComponent, SalasComponent, GerenciarSalasComponent],
   imports: [
     CommonModule,
     RouterModule,
