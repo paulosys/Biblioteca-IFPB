@@ -14,7 +14,7 @@ export class MensagemSweetService implements MensagemAbstract {
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      cancelButtonText:'Cancelar',
+      cancelButtonText: 'Cancelar',
       confirmButtonText: 'Sim, deletar!',
     }).then((result) => {
       if (result.isConfirmed) {

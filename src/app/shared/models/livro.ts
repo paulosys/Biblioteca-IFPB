@@ -12,6 +12,6 @@ export class Livro {
     public url_img: string,
     public quantidade_exemplares: number,
     public isbn?: string,
-    public id?: number
+    public id?: string
   ) {}
 }
