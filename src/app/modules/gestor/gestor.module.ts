@@ -19,10 +19,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import { SalaCardComponent } from './components/sala-card/sala-card.component';
 
 
 @NgModule({
-  declarations: [HomeAdminComponent, LivrosComponent, GerenciarLivrosComponent, SalasComponent, GerenciarSalasComponent],
+  declarations: [HomeAdminComponent, LivrosComponent, GerenciarLivrosComponent, SalasComponent, GerenciarSalasComponent, SalaCardComponent],
   imports: [
     CommonModule,
     RouterModule,

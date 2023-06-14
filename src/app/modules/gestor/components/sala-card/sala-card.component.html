@@ -1,0 +1,13 @@
+<mat-card class="sala-card-container">
+  <mat-card-content>
+    <mat-icon class="icon" [ngStyle]="{ color: ocupada ? 'red' : 'lightgreen' }">{{
+      icone
+    }}</mat-icon>
+  </mat-card-content>
+  <mat-card-footer>
+    <span class="label">{{ label }}</span>
+  </mat-card-footer>
+  <mat-card-actions>
+    <button mat-stroked-button>Ver Horários</button>
+  </mat-card-actions>
+</mat-card>
