@@ -13,7 +13,7 @@ export class GerenciarSalasComponent {
   salaForm: FormGroup;
   sala?: Sala;
   modoEdicao: boolean = false;
-
+ 
   get tituloPagina(): string {
     return this.modoEdicao ? 'Editar Agendamento' : 'Adicionar Horário';
   }
@@ -33,6 +33,7 @@ export class GerenciarSalasComponent {
       horario_inicial: ['', Validators.required],
       horario_final: ['', Validators.required],
       sala: ['', Validators.required],
+      
     });
   }
 

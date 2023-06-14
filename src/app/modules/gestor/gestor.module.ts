@@ -20,10 +20,13 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { SalaCardComponent } from './components/sala-card/sala-card.component';
+import { HorarioComponent } from './horario/horario.component';
+import { MatTableModule } from '@angular/material/table';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
 
 @NgModule({
-  declarations: [HomeAdminComponent, LivrosComponent, GerenciarLivrosComponent, SalasComponent, GerenciarSalasComponent, SalaCardComponent],
+  declarations: [HomeAdminComponent, LivrosComponent, GerenciarLivrosComponent, SalasComponent, GerenciarSalasComponent, SalaCardComponent, HorarioComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -38,6 +41,10 @@ import { SalaCardComponent } from './components/sala-card/sala-card.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
+    MatTableModule,
+    NgxMaterialTimepickerModule
   ],
 })
-export class GestorModule {}
+export class GestorModule {
+  
+}

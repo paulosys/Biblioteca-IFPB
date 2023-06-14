@@ -10,11 +10,8 @@
             <mat-form-field appearance="outline">
               <mat-label>Sala</mat-label>
               <mat-select formControlName="disponibilidade">
-                <mat-option value="Sala em grupo 1">Sala em grupo 1</mat-option> <!--nome provisório-->
-                <mat-option value="Sala em grupo 2">Sala em grupo 2</mat-option>
-                <mat-option value="Sala individual 1">Sala individual 1</mat-option>
-                <mat-option value="Sala individual 2">Sala individual 2</mat-option>
-                <mat-option value="Sala individual 3">Sala individual 3</mat-option>
+                <mat-option value="Sala em grupo">Sala em grupo</mat-option>
+                <mat-option value="Sala individual">Sala individual</mat-option>
               </mat-select>
             </mat-form-field>
           </div>
@@ -37,21 +34,24 @@
                     <mat-datepicker #picker></mat-datepicker>
                   </mat-form-field>
                 </div>
-                <div fxFlex="50" fxFill FxLayoutAlign="start">
-                  <mat-form-field appearance="outline">
-                    <mat-label>Horário Inicial</mat-label>
-                    <input formControlName="horario_inicial" type="time" matInput />
-                    <mat-icon matSuffix>access_time</mat-icon>
-                  </mat-form-field>
-                </div>
-                  <div fxFlex="50" fxFill FxLayoutAlign="start">
-                  <mat-form-field appearance="outline">
-                    <mat-label>Horário Final</mat-label>
-                    <input formControlName="horario_final" type="time" matInput />
-                    <mat-icon matSuffix>access_time</mat-icon>
-                  </mat-form-field>
-                </div>
-            </div>
+                <div fxFlex="50" fxFill FxLayoutAlign="start center">
+                  <div class="min-time-example">
+                    <mat-form-field appearance="outline"> 
+                      <input matInput placeholder="Horário Inicial" [ngxTimepicker]="min" [min]="'07:00 am'" readonly>
+                      <mat-icon matSuffix>access_time</mat-icon>
+                      <ngx-material-timepicker #min></ngx-material-timepicker>
+                    </mat-form-field>
+                  </div>
+                  
+                  <div class="max-time-example">
+                    <mat-form-field appearance="outline">
+                      <input matInput placeholder="Horário Final" [ngxTimepicker]="max" [max]="'09:00 pm'" readonly>
+                      <mat-icon matSuffix>access_time</mat-icon>
+                      <ngx-material-timepicker #max></ngx-material-timepicker>
+                    </mat-form-field>
+                  </div>
+                </div>                  
+              </div>
           </div>
             <div class="buttons-form">
               <button

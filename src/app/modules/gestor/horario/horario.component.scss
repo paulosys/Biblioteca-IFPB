@@ -1,0 +1,35 @@
+.cards-container {
+    display: flex;
+    gap: 16px;
+   
+
+  }
+  .wide-card {
+    width: 190px; /* Defina a largura desejada */
+  }
+  
+  .wide-card mat-card-content {
+    width: 50%; /* Preencha toda a largura do contêiner */
+  }
+  
+  
+  .card {
+    flex: 1;
+  }
+  .button-container button {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 50%;
+    
+  }
+  .small {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  .centered-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
