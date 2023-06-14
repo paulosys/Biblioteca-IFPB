@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MensagemAbstract } from 'src/app/shared/models/mensagem.abstract';
 import { Sala } from 'src/app/shared/models/sala';
+import {NgxMaterialTimepickerTheme} from 'ngx-material-timepicker';
 
 @Component({
   selector: 'app-gerenciar-salas',
@@ -36,7 +37,24 @@ export class GerenciarSalasComponent {
       
     });
   }
-
+  darkTheme: NgxMaterialTimepickerTheme = {
+    container: {
+      bodyBackgroundColor: '#ffffff', // branco
+      buttonColor: '#008000' // verde
+      
+    },
+    dial: {
+      dialBackgroundColor: '#008000' // cinza escuro
+    },
+    clockFace: {
+      clockFaceBackgroundColor: '#f2f2f2', // cinza claro
+      clockHandColor: '#008000', // verde
+      clockFaceTimeInactiveColor: '#999999' // cinza mais escuro
+    }
+  };
+  
+  
+  
   
  
 

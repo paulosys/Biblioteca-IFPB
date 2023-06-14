@@ -18,6 +18,7 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,10 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     MatIconModule,
     GestorModule,
     MatDialogModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
+    
+
+
 
     
   ],

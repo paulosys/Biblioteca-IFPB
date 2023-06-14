@@ -25,6 +25,7 @@ import { MatTableModule } from '@angular/material/table';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
 
+
 @NgModule({
   declarations: [HomeAdminComponent, LivrosComponent, GerenciarLivrosComponent, SalasComponent, GerenciarSalasComponent, SalaCardComponent, HorarioComponent],
   imports: [

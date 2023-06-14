@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'livros/adicionar', component: GerenciarLivrosComponent },
   { path: 'livros/:id', component: GerenciarLivrosComponent },
   {path: 'salas', component: SalasComponent},
-  {path: 'salas/adicionar', component: GerenciarSalasComponent },
+  {path: 'salas/sala-card/horario/adicionar', component: GerenciarSalasComponent },
   {path: 'salas-card/horario', component: HorarioComponent},
 ];
 

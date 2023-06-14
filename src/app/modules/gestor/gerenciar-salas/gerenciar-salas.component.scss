@@ -40,6 +40,7 @@
   
             
           }
+          
   
           .right-content {
             display: flex;
@@ -73,9 +74,19 @@
                 font-weight: bold;
               }
             }
+            
           }
         }
       }
     }
+    
   }
+  .ngx-material-timepicker-overlay {
+    border-radius: 800px;
+  }
+  
+
+  
+  
+  
   

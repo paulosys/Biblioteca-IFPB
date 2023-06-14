@@ -10,8 +10,13 @@
             <mat-form-field appearance="outline">
               <mat-label>Sala</mat-label>
               <mat-select formControlName="disponibilidade">
-                <mat-option value="Sala em grupo">Sala em grupo</mat-option>
-                <mat-option value="Sala individual">Sala individual</mat-option>
+                <mat-option value="Sala em grupo 1">Sala em grupo 1</mat-option>
+                <mat-option value="Sala em grupo 2">Sala em grupo 2</mat-option>
+                <mat-option value="Sala individual 1">Sala individual 1</mat-option>
+                <mat-option value="Sala individual 2">Sala individual 2</mat-option>
+                <mat-option value="Sala individual 3">Sala individual 3</mat-option>
+                <mat-option value="Sala individual 4">Sala individual 4</mat-option>
+                <mat-option value="Sala individual 5">Sala individual 5</mat-option>
               </mat-select>
             </mat-form-field>
           </div>
@@ -37,19 +42,20 @@
                 <div fxFlex="50" fxFill FxLayoutAlign="start center">
                   <div class="min-time-example">
                     <mat-form-field appearance="outline"> 
-                      <input matInput placeholder="Horário Inicial" [ngxTimepicker]="min" [min]="'07:00 am'" readonly>
+                      <input matInput placeholder="Horário Inicial" [ngxTimepicker]="min" [min]="'07:00 am'" [ngxTimepicker]="max" [max]="'08:00 pm'"  readonly>
                       <mat-icon matSuffix>access_time</mat-icon>
-                      <ngx-material-timepicker #min></ngx-material-timepicker>
+                      <ngx-material-timepicker #min #max [theme]="darkTheme"></ngx-material-timepicker>
                     </mat-form-field>
                   </div>
                   
                   <div class="max-time-example">
                     <mat-form-field appearance="outline">
-                      <input matInput placeholder="Horário Final" [ngxTimepicker]="max" [max]="'09:00 pm'" readonly>
+                      <input matInput placeholder="Horário Final" [ngxTimepicker]="min" [min]="'08:00 am'"[ngxTimepicker]="max" [max]="'09:00 pm'" readonly>
                       <mat-icon matSuffix>access_time</mat-icon>
-                      <ngx-material-timepicker #max></ngx-material-timepicker>
+                      <ngx-material-timepicker #min #max [theme]="darkTheme" ></ngx-material-timepicker>
                     </mat-form-field>
                   </div>
+                 
                 </div>                  
               </div>
           </div>
