@@ -18,16 +18,16 @@
         
       <div class="cards-container">
         <div class="example-card">
-          <mat-card class="wide-card" *ngFor="let sala of salas">
+          <mat-card class="wide-card">
             <mat-card-header class="centered-header">
               <div class="card-header-content">
                 <mat-card-title class="card-title">Segunda</mat-card-title>
-                <mat-card-subtitle class="card-subtitle">{{sala.data_agendada}}</mat-card-subtitle>
+                <mat-card-subtitle class="card-subtitle"></mat-card-subtitle>
               </div>
             </mat-card-header>
             <mat-card-content>
               <div class="button-container">
-                <button mat-raised-button color="primary" class="small"><span>{{sala.horario_inicial}}</span></button>
+                <button mat-raised-button color="primary" class="small"><span>9h00-10h00</span></button>
                 <button mat-raised-button color="primary" class="small"><span>9h00-10h00</span></button>
                 <button mat-raised-button color="primary" class="small"><span>9h00-10h00</span></button>
                 <button mat-raised-button color="primary" class="small"><span>9h00-10h00</span></button>
