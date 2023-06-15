@@ -1,0 +1,35 @@
+<section class="body">
+  <header class="header">
+    <div class="header-content">
+      <h1 class="title">Gerenciar Salas</h1>
+    </div>
+
+    <main>
+      <div class="salas-container">
+        <h2>Salas em Grupo</h2>
+
+        <div class="salas-content">
+          <app-sala-card
+            *ngFor="let sala of salasGrupo"
+            [icone]="sala.icone"
+            [label]="sala.label"
+            [ocupada]="sala.ocupada"
+          ></app-sala-card>
+        </div>
+      </div>
+
+      <div class="salas-container">
+        <h2>Salas Individuais</h2>
+
+        <div class="salas-content">
+          <app-sala-card
+            *ngFor="let sala of salasIndividuais"
+            [icone]="sala.icone"
+            [label]="sala.label"
+            [ocupada]="sala.ocupada"
+          ></app-sala-card>
+        </div>
+      </div>
+    </main>
+  </header>
+</section>

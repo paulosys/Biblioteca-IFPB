@@ -12,6 +12,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { GestorModule } from './modules/gestor/gestor.module';
 import { MensagemAbstract } from './shared/models/mensagem.abstract';
 import { MensagemSweetService } from './shared/services/mensagem-sweet.service';
+import {MatDialogModule} from '@angular/material/dialog';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+
+
+
+
 
 import { AngularFireModule } from '@angular/fire/compat';
 
@@ -28,6 +34,13 @@ import { FirebaseConfig } from 'firebase.config';
     MatIconModule,
     GestorModule,
     AngularFireModule.initializeApp(FirebaseConfig.firebase),
+    MatDialogModule,
+    NgxMaterialTimepickerModule,
+    
+
+
+
+    
   ],
   providers: [
     {
