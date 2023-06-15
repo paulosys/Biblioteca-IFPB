@@ -39,20 +39,22 @@
                     <mat-datepicker #picker></mat-datepicker>
                   </mat-form-field>
                 </div>
+
+
                 <div fxFlex="50" fxFill FxLayoutAlign="start center">
                   <div class="min-time-example">
                     <mat-form-field appearance="outline"> 
-                      <input matInput placeholder="Horário Inicial" [ngxTimepicker]="min" [min]="'07:00 am'" [ngxTimepicker]="max" [max]="'08:00 pm'"  readonly>
+                      <input matInput placeholder="Horário Inicial" [ngxTimepicker]="min" [min]="'07:00 am'" readonly>
                       <mat-icon matSuffix>access_time</mat-icon>
-                      <ngx-material-timepicker #min #max [theme]="darkTheme"></ngx-material-timepicker>
+                      <ngx-material-timepicker #min [theme]="darkTheme"></ngx-material-timepicker>
                     </mat-form-field>
                   </div>
                   
                   <div class="max-time-example">
                     <mat-form-field appearance="outline">
-                      <input matInput placeholder="Horário Final" [ngxTimepicker]="min" [min]="'08:00 am'"[ngxTimepicker]="max" [max]="'09:00 pm'" readonly>
+                      <input matInput placeholder="Horário Final" [ngxTimepicker]="max" [max]="'09:00 pm'" readonly>
                       <mat-icon matSuffix>access_time</mat-icon>
-                      <ngx-material-timepicker #min #max [theme]="darkTheme" ></ngx-material-timepicker>
+                      <ngx-material-timepicker #max [theme]="darkTheme" ></ngx-material-timepicker>
                     </mat-form-field>
                   </div>
                  

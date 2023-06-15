@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {CdkDragDrop, CdkDrag, CdkDropList, moveItemInArray} from '@angular/cdk/drag-drop';
 import {MatTableModule} from '@angular/material/table';
 import { Sala } from 'src/app/shared/models/sala';
+import { SalaService } from 'src/app/shared/services/sala.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,7 +13,18 @@ import { Sala } from 'src/app/shared/models/sala';
   
 })
 export class HorarioComponent {
-horarios: any;
-sala?: Sala;
+[x: string]: any;
+salas?: Array<Sala>;
 
+
+constructor(private salaService: SalaService, private router: Router) {}
+  ngOnInit(): void {
+    this.salaService.pegarTodas().subscribe((salasRetornadas) => {
+      this.salas = salasRetornadas;
+    });
+  }
+  irEditar(id: number): void {
+    this.router.navigate(['/salas', id]);
+  }
 }
+
