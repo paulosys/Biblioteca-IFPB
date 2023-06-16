@@ -1,0 +1,10 @@
+<mat-card class="sala-card-container" (click)="irHorarios(id!)">
+  <mat-card-content>
+    <mat-icon class="icon" [ngStyle]="{ color: ocupada ? 'red' : 'green' }">{{
+      icone
+    }}</mat-icon>
+  </mat-card-content>
+  <mat-card-footer>
+    <span class="label">{{ nome }}</span>
+  </mat-card-footer>
+</mat-card>

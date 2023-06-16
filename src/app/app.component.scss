@@ -1,38 +1,34 @@
-@import "@angular/material/prebuilt-themes/indigo-pink.css";
-
-.sidenav-content {
-  padding: 2rem;
-}
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 
 .sidenav-container {
   height: 100%;
 }
+.sidenav-content {
+  padding: 1.5rem;
+  background-color: #f9fafc;
+}
 
 .sidenav {
-  width: 6rem;
-  background-color: #222020;
-  box-shadow: 0.063rem 0 1.25rem #8690a3;
+  width: 13rem;
+  background-color: #ffffff;
 }
 
 .logo-container {
-  padding: 1rem;
+  padding: 1rem 1.5rem;
 }
 
 .sidenav-nav {
   list-style: none;
-  padding: 0.938rem;
-  display: flex;
-  flex-direction: column;
+  padding: 1rem;
 
   .sidenav-nav-link {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    padding: 0 0.5rem;
+    color: #4b494b;
+    gap: 0.5rem;
     height: 3rem;
-    color: #f3f3f3;
-    text-decoration: none;
-    margin-bottom: 1rem;
-    border-radius: 0.625rem;
+    border-radius: 0.8rem;
     transition: all 0.3s ease;
 
     .sidenav-link-icon {
@@ -41,26 +37,20 @@
 
     .sidenav-link-text {
       font-weight: bold;
-      text-align: center;
+    }
+
+    &:hover:not(.active) {
+      background-color: #f0f0f0;
+      cursor: pointer;
     }
   }
 }
 
-.sidenav-nav-item:hover {
-  .sidenav-nav-link {
-    background-color: #fff;
-    color: #000;
-  }
-}
-
-li:hover{
-  cursor: pointer;
-}
-
 .active {
-  background-color: #fff;
+  cursor: pointer;
+  background-color: #018301c7;
   .sidenav-link-icon,
   .sidenav-link-text {
-    color: #000;
+    color: #ffffff;
   }
 }

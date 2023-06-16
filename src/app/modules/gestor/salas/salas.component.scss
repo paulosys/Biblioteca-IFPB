@@ -1,0 +1,35 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 300px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .button-add {
+    background-color: #3fa14c;
+    color: white;
+    font-weight: bold;
+  }
+
+  .input-pesquisar {
+    height: 56px;
+    width: 60%;
+    align-self: center;
+  }
+}
+
+.salas-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
