@@ -22,12 +22,18 @@ import { MatSelectModule } from '@angular/material/select';
 import { SalaCardComponent } from './components/sala-card/sala-card.component';
 import { HorarioComponent } from './horario/horario.component';
 import { MatTableModule } from '@angular/material/table';
-import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
-
-
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
 @NgModule({
-  declarations: [HomeAdminComponent, LivrosComponent, GerenciarLivrosComponent, SalasComponent, GerenciarSalasComponent, SalaCardComponent, HorarioComponent],
+  declarations: [
+    HomeAdminComponent,
+    LivrosComponent,
+    GerenciarLivrosComponent,
+    SalasComponent,
+    GerenciarSalasComponent,
+    SalaCardComponent,
+    HorarioComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule,
@@ -43,12 +49,8 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     MatNativeDateModule,
     MatSelectModule,
     MatTableModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
   ],
-  providers: [
-    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
-  ],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }],
 })
-export class GestorModule {
-  
-}
+export class GestorModule {}

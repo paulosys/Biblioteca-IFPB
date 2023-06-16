@@ -1,4 +1,4 @@
-<mat-card class="sala-card-container">
+<mat-card class="sala-card-container" (click)="irHorarios(id!)">
   <mat-card-content>
     <mat-icon class="icon" [ngStyle]="{ color: ocupada ? 'red' : 'green' }">{{
       icone
@@ -7,10 +7,4 @@
   <mat-card-footer>
     <span class="label">{{ label }}</span>
   </mat-card-footer>
-  <mat-card-actions>
-    <button mat-stroked-button
-    class="button-add"
-    [routerLink]="['/salas-card/horario']"
-    routerLinkActive="active">Ver Horários</button>
-  </mat-card-actions>
 </mat-card>

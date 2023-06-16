@@ -11,6 +11,7 @@
         <div class="salas-content">
           <app-sala-card
             *ngFor="let sala of salasGrupo"
+            [id]="sala.id"
             [icone]="sala.icone"
             [label]="sala.label"
             [ocupada]="sala.ocupada"
@@ -24,6 +25,7 @@
         <div class="salas-content">
           <app-sala-card
             *ngFor="let sala of salasIndividuais"
+            [id]="sala.id"
             [icone]="sala.icone"
             [label]="sala.label"
             [ocupada]="sala.ocupada"

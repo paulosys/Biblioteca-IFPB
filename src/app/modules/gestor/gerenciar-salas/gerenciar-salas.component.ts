@@ -91,7 +91,7 @@ export class GerenciarSalasComponent {
   adicionar(sala: Sala) {
     this.salaService.inserir(sala).subscribe((inserida) => {
       this.salaForm.reset();
-      this.router.navigateByUrl('/salas/salas-card/horario');
+      this.router.navigateByUrl('/salas/horarios');
     });
   }
   atualizar(sala: Sala) {
@@ -100,7 +100,7 @@ export class GerenciarSalasComponent {
 
     
       this.salaService.atualizar(sala).subscribe((editada) => {
-        this.router.navigateByUrl('/salas/salas-card/horario');
+        this.router.navigateByUrl('/salas/horarios');
       });
     };
   }
