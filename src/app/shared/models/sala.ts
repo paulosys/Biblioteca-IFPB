@@ -1,11 +1,8 @@
-
 export class Sala {
-    constructor(
-      public data_agendada: Date,
-      public horario_inicial: string, // 
-      public horario_final: string,
-      public tipo_sala: string,
-      public id?: number
-    ) {}
-  }
-  
+  constructor(
+    public tipo_sala: number,
+    public ocupada: boolean,
+    public nome: string,
+    public id?: string
+  ) {}
+}

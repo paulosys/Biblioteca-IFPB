@@ -3,18 +3,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MensagemAbstract } from 'src/app/shared/models/mensagem.abstract';
 import { Sala } from 'src/app/shared/models/sala';
-import {NgxMaterialTimepickerTheme} from 'ngx-material-timepicker';
+import { NgxMaterialTimepickerTheme } from 'ngx-material-timepicker';
 import { SalaService } from 'src/app/shared/services/sala.service';
 @Component({
   selector: 'app-gerenciar-salas',
   templateUrl: './gerenciar-salas.component.html',
-  styleUrls: ['./gerenciar-salas.component.scss']
+  styleUrls: ['./gerenciar-salas.component.scss'],
 })
 export class GerenciarSalasComponent {
   salaForm: FormGroup;
   sala?: Sala;
   modoEdicao: boolean = false;
- 
+
   get tituloPagina(): string {
     return this.modoEdicao ? 'Editar Agendamento' : 'Adicionar Horário';
   }
@@ -35,27 +35,26 @@ export class GerenciarSalasComponent {
       horario_inicial: ['', Validators.required],
       horario_final: ['', Validators.required],
       sala: ['', Validators.required],
-      
     });
   }
   darkTheme: NgxMaterialTimepickerTheme = {
     container: {
       bodyBackgroundColor: '#ffffff', // branco
-      buttonColor: '#008000' // verde
-      
+      buttonColor: '#008000', // verde
     },
     dial: {
-      dialBackgroundColor: '#008000' // verde
+      dialBackgroundColor: '#008000', // verde
     },
     clockFace: {
       clockFaceBackgroundColor: '#f2f2f2', // cinza claro
       clockHandColor: '#008000', // verde
-      clockFaceTimeInactiveColor: '#999999' // cinza mais escuro
-    }
+      clockFaceTimeInactiveColor: '#999999', // cinza mais escuro
+    },
   };
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       const id = params['id'];
+      console.log('entrou');
       if (id) {
         this.salaService.pegarPorId(id).subscribe((salaRetornada) => {
           this.sala = salaRetornada;
@@ -64,53 +63,31 @@ export class GerenciarSalasComponent {
           this.modoEdicao = true;
         });
       }
+    });
   }
-  );}
 
   submit() {
-    if(this.salaForm.invalid) return;
+    if (this.salaForm.invalid) return;
 
-    const{
-      data_agendada,
-      horario_inicial,
-      horario_final,
-      tipo_sala,
-    } = this.salaForm.value;
+    const { tipo_sala } = this.salaForm.value;
 
-    const sala: Sala = new Sala(
-      new Date(data_agendada),
-      horario_inicial,
-      horario_final,
-      tipo_sala,
-    );
+    const sala: Sala = new Sala(tipo_sala, false, 'Sala 1');
 
     this.modoEdicao ? this.atualizar(sala) : this.adicionar(sala);
-
   }
 
   adicionar(sala: Sala) {
-    this.salaService.inserir(sala).subscribe((inserida) => {
-      this.salaForm.reset();
-      this.router.navigateByUrl('/salas/horarios');
-    });
+    // this.salaService.inserir(sala).subscribe((inserida) => {
+    //   this.salaForm.reset();
+    //   this.router.navigateByUrl('/salas/horarios');
+    // });
   }
   atualizar(sala: Sala) {
-    if(!this.sala) return;
+    if (!this.sala) return;
     sala.id = this.sala.id;
 
-    
-      this.salaService.atualizar(sala).subscribe((editada) => {
-        this.router.navigateByUrl('/salas/horarios');
-      });
-    };
+    // this.salaService.atualizar(sala).subscribe((editada) => {
+    //   this.router.navigateByUrl('/salas/horarios');
+    // });
   }
-  
-
-
-
-
-
-
-
-
-  
+}

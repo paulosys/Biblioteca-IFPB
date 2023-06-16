@@ -12,8 +12,8 @@
           <app-sala-card
             *ngFor="let sala of salasGrupo"
             [id]="sala.id"
-            [icone]="sala.icone"
-            [label]="sala.label"
+            [icone]="'group'"
+            [nome]="sala.nome"
             [ocupada]="sala.ocupada"
           ></app-sala-card>
         </div>
@@ -26,8 +26,8 @@
           <app-sala-card
             *ngFor="let sala of salasIndividuais"
             [id]="sala.id"
-            [icone]="sala.icone"
-            [label]="sala.label"
+            [icone]="'person'"
+            [nome]="sala.nome"
             [ocupada]="sala.ocupada"
           ></app-sala-card>
         </div>

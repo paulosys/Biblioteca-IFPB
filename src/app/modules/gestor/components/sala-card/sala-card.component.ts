@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 export class SalaCardComponent {
   @Input() id?: string;
   @Input() icone?: string;
-  @Input() label?: string;
-  @Input() ocupada: boolean = false;
+  @Input() nome?: string;
+  @Input() ocupada?: boolean;
 
   constructor(private router: Router) {}
 

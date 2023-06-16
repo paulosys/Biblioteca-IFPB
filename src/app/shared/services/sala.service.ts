@@ -1,48 +1,40 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Sala } from '../models/sala';
+import {
+  AngularFirestore,
+  AngularFirestoreCollection,
+} from '@angular/fire/compat/firestore';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SalaService {
-  URL_SALAS = 'https://json-server-pweb.paulosilva3.repl.co/salas';
+  NOME_COLECAO = 'salas';
+  colecaoSalas: AngularFirestoreCollection<Sala>;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private afs: AngularFirestore) {
+    this.colecaoSalas = afs.collection(this.NOME_COLECAO);
+  }
 
   pegarTodas(): Observable<Sala[]> {
-    return this.httpClient.get<Sala[]>(this.URL_SALAS);
+    return this.colecaoSalas.valueChanges({ idField: 'id' });
   }
 
-  pegarPorId(id: number): Observable<Sala> {
-    return this.httpClient.get<Sala>(`${this.URL_SALAS}/${id}`);
-  }
+  pegarPorId(id: string): Observable<Sala> {
+    const documentoRef = this.colecaoSalas.doc(id);
+    return documentoRef.get().pipe(
+      map((documento: any) => {
+        const salaData = documento.data();
+        if (!salaData) throw new Error('Dados da sala não encontrados');
 
-  pegarporSala(tipo_sala: string): Observable<Sala> {
-    return this.httpClient.get<Sala>(`${this.URL_SALAS}?sala=/${tipo_sala}`);
-  }
-  pegarPorData(data_agendada: Date): Observable<Sala> {
-    return this.httpClient.get<Sala>(`${this.URL_SALAS}?data=/${data_agendada}`);
-  }
-  pegarPorHorarioInicial(horario_inicial: string): Observable<Sala> {
-    return this.httpClient.get<Sala>(`${this.URL_SALAS}?horario=/${horario_inicial}`);
-  }
-  pegarPorHorarioFinal(horario_final: string): Observable<Sala> {
-    return this.httpClient.get<Sala>(`${this.URL_SALAS}?horario=/${horario_final}`);
-  }
-  inserir(sala: Sala): Observable<Sala> {
-    return this.httpClient.post<Sala>(this.URL_SALAS, sala);
-  }
-
-  atualizar(sala: Sala): Observable<Sala> {
-    return this.httpClient.put<Sala>(`${this.URL_SALAS}/${sala.id}`, sala);
-  }
-
-  apagar(id: number): Observable<Sala> {
-    return this.httpClient.delete<Sala>(`${this.URL_SALAS}/${id}`);
+        return new Sala(
+          salaData['tipo_sala'],
+          salaData['ocupada'],
+          salaData['nome'],
+          documento.id
+        );
+      })
+    );
   }
 }
-
-
-
