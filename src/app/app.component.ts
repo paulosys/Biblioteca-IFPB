@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,26 +8,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'biblioteca';
-  navData = [
-    {
-      routeLink: "home-admin",
-      icon: "home",
-      label: "Início",
-    },
-    {
-      routeLink: "livros",
-      icon: "menu_book",
-      label: "Livros",
-    },
-    {
-      routeLink: "salas",
-      icon: "room_preferences",
-      label: "Salas",
-    },
-    {
-      routeLink: "cadastrar-usuario",
-      icon: "logout",
-      label: "Sair",
-    },
-  ];
+  showGestorMenu: boolean;
+
+  constructor(private router: Router) {
+    this.showGestorMenu = false;
+
+    const gestorRoutes = ['/gestor/home', '/gestor/salas', '/gestor/livros'];
+
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        const currentRoute = event.urlAfterRedirects;
+
+        this.showGestorMenu = gestorRoutes.some((route) =>
+          currentRoute.startsWith(route)
+        );
+      }
+    });
+  }
 }

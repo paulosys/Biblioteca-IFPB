@@ -12,9 +12,11 @@ export class SalaCardComponent {
   @Input() nome?: string;
   @Input() ocupada?: boolean;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    console.log(this.router.config);
+  }
 
   irHorarios(id: string) {
-    this.router.navigate(['/salas/horarios', id]);
+    this.router.navigate(['/gestor/salas/horarios', id]);
   }
 }

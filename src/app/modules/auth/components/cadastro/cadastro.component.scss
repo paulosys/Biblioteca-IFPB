@@ -1,0 +1,96 @@
+.main-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.left-content {
+  background-color: #78d259;
+  width: 55%;
+  display: flex;
+  justify-content: center;
+}
+
+.left-content img {
+  height: 90%;
+  object-fit: contain;
+}
+
+.right-content {
+  width: 45%;
+}
+
+.sign-container {
+  display: flex;
+  height: 100%;
+}
+
+.background {
+  background-color: #78d259;
+  width: 90%;
+  object-fit: contain;
+}
+
+.card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  text-align: center;
+  max-width: 400px;
+  margin: auto;
+}
+
+.sign-header {
+  text-align: left;
+  margin-bottom: 32px;
+}
+
+.sign-title {
+  font-size: 35px;
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #404040;
+  font-weight: 500;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+button.botao {
+  width: 100%;
+  background-color: #3fa14c;
+  color: #fff;
+  font-weight: bold;
+}
+
+.create-account {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-size: 13px;
+  margin-top: 50px;
+  color: #404040;
+}
+
+.create-account span {
+  margin-right: 5px;
+}
+
+.create-account a {
+  color: #78d259;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.form-group {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}

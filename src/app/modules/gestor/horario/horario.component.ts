@@ -51,6 +51,6 @@ export class HorarioComponent implements OnInit {
   }
 
   irEditar(id: number): void {
-    this.router.navigate(['/salas', id]);
+    this.router.navigate(['/gestor/salas', id]);
   }
 }

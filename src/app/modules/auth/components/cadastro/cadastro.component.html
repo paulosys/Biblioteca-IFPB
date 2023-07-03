@@ -1,0 +1,82 @@
+<section class="main-container">
+  <div class="left-content">
+    <img src="assets/cadastro.svg" alt="" />
+  </div>
+
+  <div class="right-content">
+    <form [formGroup]="cadastroForm" (ngSubmit)="submit()">
+      <div class="sign-container">
+        <div class="card">
+          <div class="sign-header">
+            <h2 class="sign-title">Criar Conta</h2>
+          </div>
+          <div class="form-group">
+            <mat-form-field appearance="outline">
+              <mat-label>Nome</mat-label>
+              <input formControlName="nome" type="text" matInput required/>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Sobrenome</mat-label>
+              <input formControlName="sobrenome" type="text" matInput required />
+            </mat-form-field>
+          </div>
+
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              placeholder="Matrícula"
+              type="text"
+              formControlName="matricula"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>CPF</mat-label>
+            <input
+              matInput
+              placeholder="CPF"
+              type="text"
+              formControlName="cpf"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Senha</mat-label>
+            <input
+              class="mat-input-element"
+              matInput
+              placeholder="Senha"
+              [type]="hidePassword ? 'password' : 'text'"
+              formControlName="senha"
+              required
+            />
+            <button mat-icon-button matSuffix (click)="verSenha()">
+              <mat-icon>{{
+                hidePassword ? 'visibility_off' : 'visibility'
+              }}</mat-icon>
+            </button>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Confirmar senha</mat-label>
+            <input
+              class="mat-input-element"
+              matInput
+              placeholder="Confirmar senha"
+              [type]="hidePassword ? 'password' : 'text'"
+              formControlName="confirmar_senha"
+              required
+            />
+            <button mat-icon-button matSuffix (click)="verSenha()">
+              <mat-icon>{{
+                hidePassword ? 'visibility_off' : 'visibility'
+              }}</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <button class="botao" mat-raised-button type="submit">
+            Cadastrar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

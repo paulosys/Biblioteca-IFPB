@@ -1,0 +1,49 @@
+<section class="main-container">
+  <div class="left-content">
+    <img src="assets/login.svg" alt="" />
+  </div>
+
+  <div class="right-content">
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+      <div class="login-container">
+        <div class="card">
+          <div class="login-header">
+            <h2 class="login-title">Entrar</h2>
+          </div>
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              placeholder="CPF"
+              type="text"
+              formControlName="cpf"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <input
+              class="mat-input-element"
+              matInput
+              placeholder="Senha"
+              [type]="hidePassword ? 'password' : 'text'"
+              formControlName="senha"
+              required
+            />
+            <button mat-icon-button matSuffix (click)="verSenha()">
+              <mat-icon>{{
+                hidePassword ? 'visibility_off' : 'visibility'
+              }}</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <button class="botao" mat-raised-button color="primary" type="submit">
+            Entrar
+          </button>
+          <div class="create-account">
+            <span>Não possui conta? </span>
+            <a routerLink="auth/cadastro">Criar uma conta</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

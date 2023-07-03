@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LogoComponent } from './shared/components/logo/logo.component';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
@@ -18,9 +17,10 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { AngularFireModule } from '@angular/fire/compat';
 
 import { FirebaseConfig } from 'firebase.config';
+import { AuthModule } from './modules/auth/auth.module';
 
 @NgModule({
-  declarations: [AppComponent, LogoComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -29,6 +29,7 @@ import { FirebaseConfig } from 'firebase.config';
     MatListModule,
     MatIconModule,
     GestorModule,
+    AuthModule,
     AngularFireModule.initializeApp(FirebaseConfig.firebase),
     MatDialogModule,
     NgxMaterialTimepickerModule,
