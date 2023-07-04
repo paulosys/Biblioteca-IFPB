@@ -9,15 +9,21 @@ import { LivroService } from 'src/app/shared/services/livro.service';
   styleUrls: ['./livros.component.scss'],
 })
 export class LivrosComponent implements OnInit {
-  livros: Array<Livro> = [];
+  _livros: Array<Livro> = [];
 
   pesquisa: string = '';
 
   constructor(private livroService: LivroService, private router: Router) {}
 
+  get livros(): Array<Livro> {
+    return this._livros.filter((livro) =>
+      livro.titulo.toLowerCase().includes(this.pesquisa.toLowerCase())
+    );
+  }
+
   ngOnInit(): void {
     this.livroService.pegarTodos().subscribe((livrosRetornados) => {
-      this.livros = livrosRetornados;
+      this._livros = livrosRetornados;
     });
   }
 
