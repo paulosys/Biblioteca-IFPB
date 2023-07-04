@@ -11,8 +11,8 @@ import { LivroService } from 'src/app/shared/services/livro.service';
   styleUrls: ['./gerenciar-livros.component.scss'],
 })
 export class GerenciarLivrosComponent {
+  livroId?: number;
   livroForm: FormGroup;
-  livro?: Livro;
   modoEdicao: boolean = false;
 
   get tituloPagina(): string {
@@ -48,22 +48,25 @@ export class GerenciarLivrosComponent {
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      const id = params['id'];
-      if (id) {
-        this.livroService.pegarPorId(id).subscribe((livroRetornado) => {
-          this.livro = livroRetornado;
-          this.livroForm.patchValue(this.livro);
+      this.livroId = params['id'];
+      if (this.livroId) {
+        this.livroService
+          .pegarPorId(this.livroId)
+          .subscribe((livroRetornado) => {
+            this.livroForm.patchValue(livroRetornado);
 
-          this.livroForm.controls['disponibilidade'].setValue(
-            this.livro.disponibilidade == true ? 'Disponível' : 'Indisponível'
-          );
+            this.livroForm.controls['disponibilidade'].setValue(
+              livroRetornado.disponibilidade == true
+                ? 'Disponível'
+                : 'Indisponível'
+            );
 
-          this.livroForm.controls['data_publicacao'].setValue(
-            new Date(livroRetornado.data_publicacao).toISOString()
-          );
+            this.livroForm.controls['data_publicacao'].setValue(
+              new Date(livroRetornado.data_publicacao).toISOString()
+            );
 
-          this.modoEdicao = true;
-        });
+            this.modoEdicao = true;
+          });
       }
     });
   }
@@ -83,13 +86,16 @@ export class GerenciarLivrosComponent {
       this.livroForm.value.idioma,
       this.livroForm.value.url_img,
       this.livroForm.value.qntd_exemplares,
-      this.livroForm.value.isbn
+      this.livroForm.value.isbn,
+      this.livroId ?? undefined
     );
 
     this.modoEdicao ? this.atualizar(livro) : this.adicionar(livro);
   }
 
   adicionar(livro: Livro) {
+    if (!livro) return;
+    
     this.livroService.inserir(livro).subscribe((adicionado) => {
       this.mensagemService.sucesso('Livro adicionado com sucesso!', () => {
         this.livroForm.reset();
@@ -99,8 +105,7 @@ export class GerenciarLivrosComponent {
   }
 
   atualizar(livro: Livro) {
-    if (!this.livro) return;
-    livro.id = this.livro.id;
+    if (!livro) return;
 
     this.mensagemService.alerta('Livro editado com sucesso!', () => {
       this.livroService.atualizar(livro).subscribe((editado) => {
@@ -110,11 +115,10 @@ export class GerenciarLivrosComponent {
   }
 
   apagar() {
-    if (!this.livro) return;
-    const id = this.livro.id!;
+    if (!this.livroId) return;
 
     this.mensagemService.deletar('Livro apagado com sucesso!', () => {
-      this.livroService.apagar(id).subscribe((apagado) => {
+      this.livroService.apagar(this.livroId!).subscribe((apagado) => {
         this.router.navigateByUrl('/gestor/livros');
       });
     });
