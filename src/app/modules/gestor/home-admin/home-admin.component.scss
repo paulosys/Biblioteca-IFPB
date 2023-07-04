@@ -1,0 +1,116 @@
+// ------ Perfil -------
+
+.profile-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 100%;
+    padding: 20px;
+  }
+  .teste{
+    align-items: center;
+    margin-left: 150px;
+    margin-bottom: 20px;
+  }
+  .profile-card {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-avatar {
+    background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80');
+    background-size: cover;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: #ccc; /* Altere a cor de fundo conforme necessário */
+  }
+  
+  .contact-list {
+    font-size: 18px;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+  
+  .contact-list li {
+    display: flex;
+    align-items: center;
+  }
+  
+  .contact-icon {
+    margin-right: 8px;
+    color: #888; /* Altere a cor do ícone conforme necessário */
+  }
+  
+// ----- Cards ------
+
+mat-card-header{
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+  .info{
+    font-size: 27px;
+  }
+
+  .sub-info{
+    font-size: 22px;
+  }
+
+.cards-container {
+    margin-left: 26px;
+    margin-right: 26px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  
+  .card {
+    width: 300px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .card-content {
+    margin-top: 16px;
+  }
+  
+  .card-title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .card-description {
+    text-align: center;
+    font-size: 18px;
+    color: rgb(64, 184, 17);
+    font-weight: bold;
+  }
+
+  .card-image{
+    width: 70%;
+    margin-left: 16%;
+    align-items: center;
+  }
