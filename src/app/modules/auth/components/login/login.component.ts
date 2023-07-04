@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Login } from 'src/app/shared/models/Login';
+import { Login } from 'src/app/shared/models/login';
 
 @Component({
   selector: 'app-login',

@@ -6,12 +6,12 @@ export class Livro {
     public data_publicacao: Date,
     public genero: string,
     public sinopse: string,
-    public numero_paginas: string,
-    public disponibilidade: string,
+    public qntd_paginas: string,
+    public disponibilidade: boolean,
     public idioma: string,
     public url_img: string,
-    public quantidade_exemplares: number,
+    public qntd_exemplares: number,
     public isbn?: string,
-    public id?: string
+    public id?: number
   ) {}
 }

@@ -38,8 +38,8 @@ export class GerenciarLivrosComponent {
       data_publicacao: ['', Validators.required],
       genero: ['', Validators.required],
       sinopse: ['', Validators.required],
-      numero_paginas: ['', Validators.required],
-      quantidade_exemplares: ['', Validators.required],
+      qntd_paginas: ['', Validators.required],
+      qntd_exemplares: ['', Validators.required],
       disponibilidade: ['', Validators.required],
       idioma: ['', Validators.required],
       url_img: ['', Validators.required],
@@ -52,8 +52,16 @@ export class GerenciarLivrosComponent {
       if (id) {
         this.livroService.pegarPorId(id).subscribe((livroRetornado) => {
           this.livro = livroRetornado;
-          console.log(this.livro);
           this.livroForm.patchValue(this.livro);
+
+          this.livroForm.controls['disponibilidade'].setValue(
+            this.livro.disponibilidade == true ? 'Disponível' : 'Indisponível'
+          );
+
+          this.livroForm.controls['data_publicacao'].setValue(
+            new Date(livroRetornado.data_publicacao).toISOString()
+          );
+
           this.modoEdicao = true;
         });
       }
@@ -63,34 +71,19 @@ export class GerenciarLivrosComponent {
   submit() {
     if (this.livroForm.invalid) return;
 
-    const {
-      titulo,
-      autor,
-      editora,
-      data_publicacao,
-      genero,
-      sinopse,
-      numero_paginas,
-      disponibilidade,
-      idioma,
-      url_img,
-      quantidade_exemplares,
-      isbn,
-    } = this.livroForm.value;
-
     const livro: Livro = new Livro(
-      titulo,
-      autor,
-      editora,
-      new Date(data_publicacao),
-      genero,
-      sinopse,
-      numero_paginas,
-      disponibilidade,
-      idioma,
-      url_img,
-      quantidade_exemplares,
-      isbn
+      this.livroForm.value.titulo,
+      this.livroForm.value.autor,
+      this.livroForm.value.editora,
+      new Date(this.livroForm.value.data_publicacao),
+      this.livroForm.value.genero,
+      this.livroForm.value.sinopse,
+      this.livroForm.value.qntd_paginas,
+      this.livroForm.value.disponibilidade == 'Disponível' ? true : false,
+      this.livroForm.value.idioma,
+      this.livroForm.value.url_img,
+      this.livroForm.value.qntd_exemplares,
+      this.livroForm.value.isbn
     );
 
     this.modoEdicao ? this.atualizar(livro) : this.adicionar(livro);

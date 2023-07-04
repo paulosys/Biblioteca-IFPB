@@ -21,7 +21,7 @@ export class LivrosComponent implements OnInit {
     });
   }
 
-  irEditar(id: string): void {
+  irEditar(id: number): void {
     this.router.navigate(['/gestor/livros', id]);
   }
 }
