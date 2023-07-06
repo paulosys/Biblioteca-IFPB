@@ -12,9 +12,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { LoginComponent } from './components/login/login.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { AuthRoutingModule } from './auth-routing.module';
+import { TelefonePipe } from 'src/app/shared/pipes/telefone.pipe';
+import { CpfPipe } from 'src/app/shared/pipes/cpf.pipe';
 
 @NgModule({
-  declarations: [LoginComponent, CadastroComponent],
+  declarations: [LoginComponent, CadastroComponent, TelefonePipe, CpfPipe],
   imports: [
     CommonModule,
     MatCardModule,

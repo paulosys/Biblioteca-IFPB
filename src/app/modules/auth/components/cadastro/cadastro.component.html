@@ -13,20 +13,51 @@
           <div class="form-group">
             <mat-form-field appearance="outline">
               <mat-label>Nome</mat-label>
-              <input formControlName="nome" type="text" matInput required/>
+              <input formControlName="nome" type="text" matInput required />
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Sobrenome</mat-label>
-              <input formControlName="sobrenome" type="text" matInput required />
+              <input
+                formControlName="sobrenome"
+                type="text"
+                matInput
+                required
+              />
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field appearance="outline">
+              <mat-label>Matrícula</mat-label>
+              <input
+                matInput
+                placeholder="Matrícula"
+                type="text"
+                formControlName="matricula"
+              />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Telefone</mat-label>
+              <input
+                matInput
+                placeholder="(DDD) 0000-0000"
+                type="text"
+                formControlName="telefone"
+                maxlength="15"
+                [value]="this.cadastroForm.value.telefone | telefone"
+              />
+              <mat-error *ngIf="cadastroForm.get('telefone')?.hasError">
+                Telefone inválido
+              </mat-error>
             </mat-form-field>
           </div>
 
           <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
             <input
               matInput
-              placeholder="Matrícula"
-              type="text"
-              formControlName="matricula"
+              placeholder="Email"
+              type="email"
+              formControlName="email"
             />
           </mat-form-field>
           <mat-form-field appearance="outline">
@@ -36,42 +67,47 @@
               placeholder="CPF"
               type="text"
               formControlName="cpf"
+              maxlength="14"
+              [value]="this.cadastroForm.value.cpf | cpf"
               required
             />
-          </mat-form-field>
-          <mat-form-field appearance="outline">
-            <mat-label>Senha</mat-label>
-            <input
-              class="mat-input-element"
-              matInput
-              placeholder="Senha"
-              [type]="hidePassword ? 'password' : 'text'"
-              formControlName="senha"
-              required
-            />
-            <button mat-icon-button matSuffix (click)="verSenha()">
-              <mat-icon>{{
-                hidePassword ? 'visibility_off' : 'visibility'
-              }}</mat-icon>
-            </button>
-          </mat-form-field>
-          <mat-form-field appearance="outline">
-            <mat-label>Confirmar senha</mat-label>
-            <input
-              class="mat-input-element"
-              matInput
-              placeholder="Confirmar senha"
-              [type]="hidePassword ? 'password' : 'text'"
-              formControlName="confirmar_senha"
-              required
-            />
-            <button mat-icon-button matSuffix (click)="verSenha()">
-              <mat-icon>{{
-                hidePassword ? 'visibility_off' : 'visibility'
-              }}</mat-icon>
-            </button>
           </mat-form-field>
 
+          <div class="form-group">
+            <mat-form-field appearance="outline">
+              <mat-label>Senha</mat-label>
+              <input
+                class="mat-input-element"
+                matInput
+                placeholder="Senha"
+                [type]="hidePassword ? 'password' : 'text'"
+                formControlName="senha"
+                required
+              />
+              <button mat-icon-button matSuffix (click)="verSenha()">
+                <mat-icon>{{
+                  hidePassword ? 'visibility_off' : 'visibility'
+                }}</mat-icon>
+              </button>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Confirmar senha</mat-label>
+              <input
+                class="mat-input-element"
+                matInput
+                placeholder="Confirmar senha"
+                [type]="hidePassword ? 'password' : 'text'"
+                formControlName="confirmar_senha"
+                required
+              />
+
+              <button mat-icon-button matSuffix (click)="verSenha()">
+                <mat-icon>{{
+                  hidePassword ? 'visibility_off' : 'visibility'
+                }}</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
           <button class="botao" mat-raised-button type="submit">
             Cadastrar
           </button>
