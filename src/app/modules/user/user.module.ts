@@ -7,7 +7,6 @@ import { HomeComponent } from './home/home.component';
 import { LivrosComponent } from './livros/livros.component';
 import { GerenciarLivrosComponent } from './gerenciar-livros/gerenciar-livros.component';
 import { SalasComponent } from './salas/salas.component';
-import { GerenciarSalasComponent } from './gerenciar-salas/gerenciar-salas.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -35,7 +34,6 @@ import { UserMenuComponent } from './components/user-menu/user-menu.component';
     LivrosComponent,
     GerenciarLivrosComponent,
     SalasComponent,
-    GerenciarSalasComponent,
     SalaCardComponent,
     HorarioComponent,
     UserMenuComponent,

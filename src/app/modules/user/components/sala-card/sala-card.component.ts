@@ -16,7 +16,8 @@ export class SalaCardComponent {
     console.log(this.router.config);
   }
 
-  irHorarios(id: string) {
-    this.router.navigate(['/user/salas/horarios', id]);
+  irHorarios(idSala: string) {
+    const rota = `/user/salas/${idSala}/horarios`;
+    this.router.navigate([rota]);
   }
 }
