@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cadastro } from 'src/app/shared/models/cadastro';
+import { CadastroService } from 'src/app/shared/services/cadastro.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -20,7 +21,8 @@ export class CadastroComponent {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private cadastroService: CadastroService
   ) {
     this.cadastroForm = this.formBuilder.group({
       nome: ['', Validators.required],
@@ -36,7 +38,9 @@ export class CadastroComponent {
   }
 
   submit() {
-    if (this.cadastroForm.invalid) return;
+    if (this.cadastroForm.invalid) {
+      return;
+    }
 
     const {
       nome,
@@ -58,18 +62,22 @@ export class CadastroComponent {
     }
 
     const cpfLimpo = cpf.replace(/\D/g, '');
-    const telefoneLimpo = telefone.value.replace(/\D/g, '');
+    const telefoneLimpo = telefone.replace(/\D/g, '');
 
     const cadastro: Cadastro = new Cadastro(
       nome,
       sobrenome,
       matricula,
+      endereco,
+      telefoneLimpo,
+      email,
       cpfLimpo,
       senha,
       confirmar_senha,
-      email,
-      telefoneLimpo,
-      endereco
     );
+
+    // this.cadastroService
+    //   .cadastrar(cadastro)
+    //   .subscribe((data) => console.log(data));
   }
 }
