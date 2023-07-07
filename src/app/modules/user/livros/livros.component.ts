@@ -28,6 +28,6 @@ export class LivrosComponent implements OnInit {
   }
 
   irEditar(id: number): void {
-    this.router.navigate(['/gestor/livros', id]);
+    this.router.navigate(['/user/livros', id]);
   }
 }

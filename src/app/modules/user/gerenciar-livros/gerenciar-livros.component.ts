@@ -99,7 +99,7 @@ export class GerenciarLivrosComponent {
     this.livroService.inserir(livro).subscribe((adicionado) => {
       this.mensagemService.sucesso('Livro adicionado com sucesso!', () => {
         this.livroForm.reset();
-        this.router.navigateByUrl('/gestor/livros');
+        this.router.navigateByUrl('/user/livros');
       });
     });
   }
@@ -109,7 +109,7 @@ export class GerenciarLivrosComponent {
 
     this.mensagemService.alerta('Livro editado com sucesso!', () => {
       this.livroService.atualizar(livro).subscribe((editado) => {
-        this.router.navigateByUrl('/gestor/livros');
+        this.router.navigateByUrl('/user/livros');
       });
     });
   }
@@ -119,7 +119,7 @@ export class GerenciarLivrosComponent {
 
     this.mensagemService.deletar('Livro apagado com sucesso!', () => {
       this.livroService.apagar(this.livroId!).subscribe((apagado) => {
-        this.router.navigateByUrl('/gestor/livros');
+        this.router.navigateByUrl('/user/livros');
       });
     });
   }

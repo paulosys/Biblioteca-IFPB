@@ -1,24 +1,24 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-gestor-menu',
-  templateUrl: './gestor-menu.component.html',
-  styleUrls: ['./gestor-menu.component.scss']
+  selector: 'app-user-menu',
+  templateUrl: './user-menu.component.html',
+  styleUrls: ['./user-menu.component.scss']
 })
-export class GestorMenuComponent {
+export class UserMenuComponent {
   navData = [
     {
-      routeLink: "gestor/home",
+      routeLink: "user/home",
       icon: "home",
       label: "Início",
     },
     {
-      routeLink: "gestor/livros",
+      routeLink: "user/livros",
       icon: "menu_book",
       label: "Livros",
     },
     {
-      routeLink: "gestor/salas",
+      routeLink: "user/salas",
       icon: "room_preferences",
       label: "Salas",
     },

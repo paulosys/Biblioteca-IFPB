@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
-import { GestorModule } from './modules/gestor/gestor.module';
+import { UserModule } from './modules/user/user.module';
 import { MensagemAbstract } from './shared/models/mensagem.abstract';
 import { MensagemSweetService } from './shared/services/mensagem-sweet.service';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -28,7 +28,7 @@ import { AuthModule } from './modules/auth/auth.module';
     MatSidenavModule,
     MatListModule,
     MatIconModule,
-    GestorModule,
+    UserModule,
     AuthModule,
     AngularFireModule.initializeApp(FirebaseConfig.firebase),
     MatDialogModule,

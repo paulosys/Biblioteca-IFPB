@@ -1,8 +1,8 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav mode="side" opened class="sidenav" *ngIf="showGestorMenu">
-    <app-gestor-menu></app-gestor-menu>
+  <mat-sidenav mode="side" opened class="sidenav">
+    <app-user-menu></app-user-menu>
   </mat-sidenav>
-  <div [ngClass]="{'content-wrapper': showGestorMenu}">
-    <router-outlet ></router-outlet>
+  <div class="content-wrapper">
+    <router-outlet></router-outlet>
   </div>
 </mat-sidenav-container>

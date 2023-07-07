@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Sala } from 'src/app/shared/models/sala';
 import { SalaService } from 'src/app/shared/services/sala.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DiaSemana } from 'src/app/shared/enums/dia_semana';
 
 @Component({
@@ -13,11 +13,16 @@ import { DiaSemana } from 'src/app/shared/enums/dia_semana';
 export class HorarioComponent implements OnInit {
   salas?: Array<Sala>;
   diasSemana: Array<String> = [];
+  salaId?: number;
 
-  constructor(private salaService: SalaService, private router: Router) {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.diasSemana = this._getOrdemDiaSemana();
+
+    this.route.params.subscribe((params) => {
+      this.salaId = params['id'];
+    });
   }
 
   _getOrdemDiaSemana(): Array<String> {
@@ -51,6 +56,6 @@ export class HorarioComponent implements OnInit {
   }
 
   irEditar(id: number): void {
-    this.router.navigate(['/gestor/salas', id]);
+    this.router.navigate(['/user/salas/horarios/adicionar', id]);
   }
 }

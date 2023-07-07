@@ -8,9 +8,9 @@ const routes: Routes = [
       import('./modules/auth/auth.module').then((m) => m.AuthModule),
   },
   {
-    path: 'gestor',
+    path: 'user',
     loadChildren: () =>
-      import('./modules/gestor/gestor.module').then((m) => m.GestorModule),
+      import('./modules/user/user.module').then((m) => m.UserModule),
   },
 ];
 

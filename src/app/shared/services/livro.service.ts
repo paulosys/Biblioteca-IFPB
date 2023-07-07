@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LivroService {
   //URL_LIVROS = 'https://json-server-pweb.paulosilva3.repl.co/livros';
-  URL_LIVROS = 'http://localhost:8080/livros';
+  URL_LIVROS = 'http://localhost:8080/api/livros';
   constructor(private httpClient: HttpClient) {}
 
   pegarTodos(): Observable<Livro[]> {

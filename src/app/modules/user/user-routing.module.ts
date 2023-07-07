@@ -2,23 +2,23 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { GerenciarLivrosComponent } from './gerenciar-livros/gerenciar-livros.component';
 import { GerenciarSalasComponent } from './gerenciar-salas/gerenciar-salas.component';
-import { HomeAdminComponent } from './home-admin/home-admin.component';
+import { HomeComponent } from './home/home.component';
 import { HorarioComponent } from './horario/horario.component';
 import { LivrosComponent } from './livros/livros.component';
 import { SalasComponent } from './salas/salas.component';
 
-const gestorRoutes: Routes = [
-  { path: 'home', component: HomeAdminComponent },
+const userRoutes: Routes = [
+  { path: 'home', component: HomeComponent },
   { path: 'livros', component: LivrosComponent },
   { path: 'livros/adicionar', component: GerenciarLivrosComponent },
   { path: 'livros/:id', component: GerenciarLivrosComponent },
   { path: 'salas', component: SalasComponent },
   { path: 'salas/horarios/:id', component: HorarioComponent },
-  { path: 'salas/horarios/:id/adicionar', component: GerenciarSalasComponent },
+  { path: 'salas/horarios/adicionar/:id', component: GerenciarSalasComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(gestorRoutes)],
+  imports: [RouterModule.forChild(userRoutes)],
   exports: [RouterModule],
 })
-export class GestorRoutingModule {}
+export class UserRoutingModule {}

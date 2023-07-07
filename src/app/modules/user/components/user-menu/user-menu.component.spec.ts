@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GestorMenuComponent } from './gestor-menu.component';
+import { UserMenuComponent } from './user-menu.component';
 
-describe('GestorMenuComponent', () => {
-  let component: GestorMenuComponent;
-  let fixture: ComponentFixture<GestorMenuComponent>;
+describe('UserMenuComponent', () => {
+  let component: UserMenuComponent;
+  let fixture: ComponentFixture<UserMenuComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GestorMenuComponent ]
+      declarations: [ UserMenuComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GestorMenuComponent);
+    fixture = TestBed.createComponent(UserMenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

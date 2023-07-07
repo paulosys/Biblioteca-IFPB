@@ -17,6 +17,6 @@ export class SalaCardComponent {
   }
 
   irHorarios(id: string) {
-    this.router.navigate(['/gestor/salas/horarios', id]);
+    this.router.navigate(['/user/salas/horarios', id]);
   }
 }
